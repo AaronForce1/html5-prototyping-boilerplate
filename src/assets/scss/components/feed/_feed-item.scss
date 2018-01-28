@@ -1,0 +1,31 @@
+.feed-item {
+  margin-bottom: 1.5rem;
+  &:before {
+    content: none;
+  }
+  .featured-img {
+    max-width: 100px;
+    max-height: 50px;
+    @include flex-grid-column(shrink);
+    @include flex-align(left);
+  }
+
+  .content {
+    @include flex-grid-column(expand);
+
+    .title {
+      @include flex-grid-column(12, 0);
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .desc {
+      @include flex-grid-column(12, 0);
+
+      p {
+        font-size: 0.7rem;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<form class="form row {{cssClass}}">
+{{#each (lookup . 'data')}}
+  {{> (lookup . 'type')}}
+{{/each}}
+</form>

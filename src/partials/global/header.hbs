@@ -1,0 +1,26 @@
+<header class="header header-primary">
+  <div class="logo-container">
+    <h1 class="logo"></h1>
+  </div>
+  <nav class="navigation">
+    <ul class="dropdown menu" data-dropdown-menu>
+      {{#each urls.navigation}}
+        <li>
+          <a href="{{url}}">{{title}}</a>
+          {{#if sub-nav}}
+            <ul class="menu">
+              {{#each sub-nav}}
+                <li><a href="{{url}}">{{title}}</a>
+              {{/each}}
+            </ul>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+    <div class="mobile-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+</header>

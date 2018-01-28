@@ -1,0 +1,38 @@
+{
+  "name": "html5-prototyping-boilerplate",
+  "version": "1.0.0",
+  "description": "HTML5 Boilerplate used for design prototypes. Powered by Zurb Foundation 6.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build --production",
+    "install": "gulp build"
+  },
+  "author": "AARON BAIDEME <a@baide.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "app-module-path": "^2.2.0",
+    "browser-sync": "^2.23.6",
+    "foundation-sites": "^6.4.4-rc1",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-hub": "frankwallis/gulp-hub#registry-init",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-sourcemaps": "^1.12.1",
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.3.1",
+    "motion-ui": "^1.2.3",
+    "object-fit-images": "^3.2.3",
+    "open-iconic": "^1.1.1",
+    "panini": "^1.6.0",
+    "rimraf": "^2.6.2",
+    "run-sequence": "^2.2.1",
+    "yargs": "^10.1.1"
+  }
+}

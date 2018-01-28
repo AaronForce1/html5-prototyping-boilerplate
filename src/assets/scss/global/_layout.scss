@@ -1,0 +1,276 @@
+html {}
+body {height: 100%;}
+
+html:not(.wf-active) {
+  .show-for-editor {
+    display: none !important;
+  }
+}
+
+// Shrink FIX
+.shrink {
+    width: auto;
+}
+
+// Main Window VS. Rails Components
+.container {
+  &.main_container {
+    @include flex-grid-row();
+    @include flex-align(center,stretch);
+    margin-bottom: 1rem;
+
+    .page-header {
+      @include flex-grid-column(12);
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid $light-gray;
+      box-shadow: 0 0 8px $light-gray;
+
+      &-inner {
+        @include flex-grid-row();
+        @include flex-align(center, middle);
+      }
+
+
+      .title {
+        @include flex-grid-column(expand, 0);
+        font-weight: 100;
+      }
+
+      .modifiers {
+        @include flex-grid-column(shrink, 0);
+        margin: 0;
+        list-style-type: none;
+
+        .button {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .main_content {
+      @include flex-grid-column(10);
+      padding-left: 0 !important;
+    }
+
+    .rails_content {
+      @include flex-grid-column(2);
+    }
+  }
+}
+
+
+// Generic layout classes
+$module: '.lt';
+#{$module} {
+
+  // Background Layouts
+  &-bg {
+      &-grey {
+          background-color: $light-gray;
+      }
+      &-white {
+          background-color: $white;
+      }
+      &-vericantblue {
+        background-color: $primary-color;
+      }
+  }
+
+  &-collapse {
+    margin:0;
+
+    @include breakpoint(medium down) {
+      margin-top: 60px;
+    }
+  }
+
+  &-centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-margin {
+    &-padding {
+      &-large {
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      &-medium {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      &-small {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-lower {
+      &-large {
+        margin-bottom: 4rem;
+      }
+
+      &-medium {
+        margin-bottom: 2rem;
+      }
+
+      &-small {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &-primary-bg-color {
+    background-color: $primary-color;
+    color: $white;
+
+    a {
+      color: white;
+
+      &:hover {color: $secondary-color;}
+    }
+    &>*
+    {
+      color: white !important;
+    }
+  }
+
+  &-alternate-bg-color {
+    background-color: $light-gray;
+
+    &-gray {
+      background-color: $medium-gray;
+    }
+
+    &-light-gray {
+        background-color: $light-gray;
+    }
+  }
+
+  &-inline {
+    display: inline-block;
+
+
+  }
+
+  &-section-padding {
+    &-large {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+
+      &>h1 {margin-bottom: 4rem;}
+    }
+    &-medium {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+
+      &-horizontal {
+          padding-left: 2rem;
+          padding-right: 2rem;
+      }
+
+      &>h1 {margin-bottom: 2rem;}
+    }
+    &-small {
+      padding-top: 1rem;
+      padding-bottom:1rem;
+
+      &-all {
+          padding: 1rem;
+      }
+
+      &>h1 {margin-bottom: 1rem;}
+    }
+  }
+
+  &-section-margin {
+    &-large {
+      margin-top: 4rem;
+      margin-top: 4rem;
+
+      &-full {
+        margin: 4rem;
+      }
+
+      &-side {
+        margin-left: 4rem;
+        margin-right: 4rem;
+      }
+    }
+
+    &-medium {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+
+      &-full {
+        margin: 2rem;
+      }
+
+      &-side {
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+    }
+
+    &-small {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      &-full {
+        margin: 1rem;
+      }
+
+      &-side {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  &-margin-lower {
+    margin-bottom: 2rem;
+  }
+
+  &-box-shadow {
+    &-dark {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+    &-light {
+      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.3), 0 1px 0 rgba(255, 255, 255, 0.0);
+    }
+  }
+
+  &-border-radius {
+    border-radius: $global-radius;
+  }
+
+  /*
+  Compiled layout classes
+  This combine specific items into a single class for ease of use
+  */
+
+    &-collapse {
+      max-width: none;
+    }
+
+    &-padding-collapse {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    &-content-full {
+      @include grid-column(12);
+
+      &:last-child {
+        float: none;
+      }
+    }
+}
+
+.lt-border-compressed {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

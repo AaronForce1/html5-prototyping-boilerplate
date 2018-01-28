@@ -1,0 +1,25 @@
+{
+  "dest" : {
+    "root": "./dist"
+  },
+  "config": {
+    "PORT": 3000
+  },
+  "javascript": [
+    "node_modules/foundation-sites/dist/js/foundation.js",
+    "node_modules/object-fit-images/dist/ofi.js",
+    "src/assets/js/**/*.js",
+    "src/assets/js/app.js"
+  ],
+  "sass": [
+    "node_modules/foundation-sites/scss",
+    "node_modules/motion-ui"
+  ],
+  "images": [
+    "src/assets/img/**/*"
+  ],
+  "assets": [
+    "src/assets/**/*",
+    "!src/assets/{js,scss,img}/**/*"
+  ]
+}
