@@ -1,12 +1,18 @@
-Welcome to Vericant!
+Welcome to HTML5 Prototyping Boilerplate!
 ===================
 
-This project is used for Front End/Design/Architecture layouts for new, upcoming features for the Vericant site and its included technologies. The original Front-End development framework was developed using Python's Django/Jinja frameworks intertwined with Bootstrap 3. All design preparations for 2017 and beyond, including this prototype project will be built using the Zurb Foundation front-end
-framework. The source code is compiled using a mixture of NPM and Gulp commands which will output a simple, static HTML site.
+This project is used for Front End/Design/Architecture layouts for new, upcoming features for any web application framework. The premise is as follows: most design phases generate deliverables completed in Sketch or Photoshop, but full integration with a BE/CMS platform takes time. During this time, web-generated prototypes are usually the first step of platform development work. This boilerplate not only allows for simple proof-of-concept (POC) prototyping, but can also ensure that FE development can proceed using a framework that allows for a simplification on an MVC paradigm.
 
-Although this is a static design framework, this prototype platform will be set up according to a classic MVC (Model-View-Controller) pattern as much as possible - this will allow easy replication and integration with pre-existing Vericant systems and frameworks.
+ This original Front-End development framework was developed in mind with integration using Python's Django/Jinja frameworks. Eventually it was expanded to be used in ASP.Net Development. 
+ 
+ Deisgn Components
+ -----------------
 
-Most of the UI is separated into modular view components. The data is primarily stored in YAML files in order to avoid requiring any sort of back-end database infrastructure. That said, any changes to the data - the site will need to be re-compiled and deployed. There is no real controller logic except using Handlebars to render certain views and elementary logic handles during the compilation process (if-else statements, etc.).
+ All design preparations for 2017 and beyond, including this prototype project will be built using the Zurb Foundation front-end framework. The source code is compiled using a mixture of NPM and Gulp commands which will output a simple, static HTML site.
+
+Although this is a static design framework, this prototype platform will be set up according to a classic MVC (Model-View-Controller) pattern as much as possible - this will allow easy replication and integration with more complex systems and frameworks.
+
+Most of the UI is separated into modular view components. The data layer is primarily stored in YAML files in order to avoid requiring any sort of back-end database infrastructure. That said, any changes to the data - the site will need to be re-compiled and deployed. There is no real controller logic except using Handlebars to render certain views and elementary logic handles during the compilation process (if-else statements, etc.).
 
 Getting Started
 ---------------
@@ -14,26 +20,13 @@ Getting Started
 Development Application Dependencies:
 + You will need to have the following items installed on your local machine to handle setting up this framework correctly.
 
-
-    Nodejs - www.nodejs.org - Version 6, **NOT VERSION 7**
-    Git - www.git-scm.com - Git for the command line
-
-> RE: GIT Installation - Would recommend installing "optional command line tools" in order to bring Linux-like BASH command line functionality to Windows.
-
-
-
-+ Once these items are installed, you will need to use Node Package Manager (npm) to install certain dependencies globally to the system. You will need to run an elevated command prompt *(Right click when running command prompt in windows, choosing "Run As Administrator")*
-
-
-      $ npm install -g gulp
-      $ npm install -g foundation-cli
+    Nodejs - www.nodejs.org
 
 +  Clone the repository in a location of your choosing. After cloning the repository - you will need to install the node dev-dependency modules. Do this by navigating to the root of the repo:
 
 
-    $ git clone https://github.com/vericant/vericant-prototyping.git
-    $ cd vericant-prototyping/
-    $ git checkout dev
+    $ git clone https://github.com/AaronForce1/html5-prototyping-boilerplate
+    $ cd html5-prototyping-boilerplate/
 
     $ npm install
 
@@ -41,19 +34,17 @@ Development Application Dependencies:
     development of this framework:
 
 
-    gulp (and various gulp dependencies): "^3.9.0"
+    gulp (and various gulp dependencies): "4.0"
         // Compiles src to dist
 
-    foundation-sites: "^6.3.0"
+    foundation-sites: "6.4.4"
         // Foundation Front End Framework
 
-    object-fit-images: "^2.5.3"
+    object-fit-images: "3.2.3"
         // Imagizer that sets images to fit or fill their div
 
-    panini: "^1.0.0"
+    panini: "^1.6.0"
         // Handlebars and compilation tool
-
-<center>*Most other devDependencies are for gulp compilation - some may be depreciated in later releases*
 
 
 +  There are two primary gulp tasks that can be used:
@@ -62,13 +53,13 @@ Development Application Dependencies:
     $ gulp build
         // Compiles the SRC code and distributes it into a newly cleaned DIST
 
-    $ gulp development
-        // Compiles and sets WATCH to continue re-compiling as one actively makes changes
+    $ gulp
+        // Compiles and sets WATCH to continue re-compiling as one actively makes changes, setting browser-sync server on localhost
 
 Source Code Hierarchy
 ---------------------
 
-The Vericant Prototyping repository is composed primarily of source code files that are then
+This Prototyping Boilerplate is composed primarily of source code files that are then
 compiled using gulp into a distribution that should then be uploaded to a web
 server. The /src folder has 6 primary sub-directories:
 
@@ -82,14 +73,13 @@ server. The /src folder has 6 primary sub-directories:
 | \|            | partials | Partial HTML snippets organized primarily as “ui-modules”. Some are generated for certain page-specific use; inline SVG elements are also stored here                                                                             |
 | node\_modules |          | Created during npm install to contain necessary development modules/code.                                                                                                                                                         |
 | dist          |          | Compiled from SRC to prepare site for hosting                                                                                                                                                                                     |
-| resources     |          | UI/Design resources. *To be removed...*                                                                                                                                                                                           |
 
 
 
 ### SASS File Implementation Overview
 
 The SCSS files located in /src/assets are the core design components for both
-Foundation framework and the B • OUT Website design.
+Foundation framework and prototype page/component design.
 
 The SCSS **Root Directory** contains the following configuration files:
 
@@ -98,7 +88,7 @@ app.scss
     // Imports mixins, settings.scss, font configurations, foundation, and custom SCSS components
 
 settings.scss
-    // Required by Foundation Framework. Declares variables used throughout Foundation's SCSS style sheets. Some are preconfigured with new customs for B•OUT, however most are untouched.
+    // Required by Foundation Framework. Declares variables used throughout Foundation's SCSS style sheets. Some are preconfigured with new customs for a specific site, however most are untouched.
 
 mixins.scss
     // New SASS scripting methods for easier CSS compilation
